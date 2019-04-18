@@ -1,0 +1,72 @@
+{% extends 'bbm.html' %}
+{% block content %}
+
+    <section class="section">
+        <div class="container">
+            <div>
+            <ul class="form-container ff col-sm-3 nav nav-pils nav-stacked side-menu">
+                <li class="active">
+                    <a href="#">Home</a>
+                </li>
+                <li> <a href="{% url 'app2:login' %}">Login</a></li>
+                <li> <a href="{% url 'app2:register' %}">Register</a></li>
+                <li> <a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+        <div class="col-sm-8 register-container form-container">
+            <form method="post" enctype="multipart/form-data" >
+                {% csrf_token %}
+                {% if invalid %}
+                <script>alert('Not a valid form');</script>
+                {% endif %}
+                {% if success %}
+                <script>alert('Data Stored Sucessfully');</script>
+                {% endif %}
+
+
+                <h3 class="text-center"> REGISTER FORM </h3>
+
+                <select name="s1">
+                <option value="1">select</option>
+                <option value="2">donar</option>
+
+
+                </select> <br>
+
+                <div class="form-group">
+                    <label>Donar Name</label>
+                    <input type="text" class="form-control" name="donarname" id="donarname">
+                </div>
+                <div class="form-group">
+                    <label>Donar EmailId</label>
+                    <input type="text" class="form-control" name="donaremail" id="donaremail">
+                </div>
+                <div class="form-group">
+                    <label>Donar Password</label>
+                    <input type="text" class="form-control" name="donarpassword" id="donarpassword">
+                </div>
+                <div class="form-group">
+                    <label>Donar Contact No.</label>
+                    <input type="text" class="form-control" name="donarcontactno" id="donarcontactno">
+                </div>
+                <div class="form-group">
+                    <label>Donar Age</label>
+                    <input type="text" class="form-control" name="donarage" id="donarage">
+                </div>
+                <div class="form-group">
+                    <label>Donar Image</label>
+                    <input type="file" class="form-control" name="donarimage">
+                </div>
+
+                <div class="form-group text-center">
+                    <input type="Submit" class="btn-btn primary">
+                </div>
+
+            </form>
+
+        </div></div></div>
+    </section>
+
+
+{% endblock content %}

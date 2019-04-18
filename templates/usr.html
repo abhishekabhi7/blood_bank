@@ -1,0 +1,25 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" >
+    {% csrf_token %}
+    {% if invalid %}
+    <script>alert('Not a valid form');</script>
+    {% endif %}
+    {% if success %}
+    <script>alert('Data Stored Sucessfully');</script>
+    {% endif %}
+    <label>Rolename</label>
+    <input type="text" name="rolename" id="rolename"> <br>
+    <input type="submit" value="Insert">
+
+</form>
+</body>
+</html>
+

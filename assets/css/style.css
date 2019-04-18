@@ -1,0 +1,60 @@
+.custom-table>tbody>tr:nth-of-type(odd) {
+    background-color: blue;
+}
+
+.table-hover > tbody > tr:hover {
+  background-color: yellow;
+}
+
+.navbar-custom{
+backgroung-color: yellow;
+border-radius: 0;
+margin-bottom: 0;
+}
+
+.nav>li>a:hovar{
+    color: #fff;
+    background-color: white;
+}
+
+.navbar-brand{
+    height: auto;
+    max-width: 80px;
+}
+
+.navbar-toggle{
+border-color: red;
+}
+
+.navbar-toggle .item-bar{
+background-color: blue;
+}
+
+.img-fully{
+    display: block;
+    max-width: 100%;
+    height: auto;
+   }
+
+.section{
+padding-top : 80px;
+padding-bottom : 80px;
+}
+
+.form-container{
+background :rgba(255,255,255,0.6);
+padding-top : 25px;
+padding-bottom : 25px;
+border-radius: 20px;
+}
+.ff{
+height : auto}
+.login-bg{
+background: url(pv.jpg);
+background-size: cover;
+}
+
+.lgn-bg{
+background: url(bbm22.jpg);
+background-size: cover;
+}

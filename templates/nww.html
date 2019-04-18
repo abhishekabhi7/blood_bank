@@ -1,0 +1,51 @@
+{% extends 'bbm.html' %}
+{% block content %}
+
+ <div class="col-sm-8 register-container form-container">
+
+     <form method="post" enctype="multipart/form-data" >
+
+                {% csrf_token %}
+                {% if length_less %}
+                <script>alert('password should be 8 characters');</script>
+                {% endif %}
+                {% if old_p_invalid %}
+                <script>alert('old password invalid');</script>
+                {% endif %}
+                {% if pass_dont_match %}
+                <script>alert('password don't match');</script>
+                {% endif %}
+                {% if success %}
+                <script>alert('password change successfully');</script>
+                {% endif %}
+
+
+                <div class="form-group">
+
+                    <label>OTP</label>
+                    <input type="text" class="form-control" name="otp" id="otp">
+                </div>
+                <div class="form-group">
+                    <label>Old Password</label>
+                    <input type="text" class="form-control" name="oldpassword" id="oldpassword">
+                </div>
+
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="text" class="form-control" name="newpassword" id="newpassword">
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm New Password</label>
+                    <input type="text" class="form-control" name="confirmpassword" id="confirmpassword">
+                </div>
+
+                 <div class="form-group text-center">
+                    <input type="Submit" class="btn-btn primary">
+                </div>
+
+
+    </form>
+ </div>
+
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+        {% block contenttitle %}
+        BBM
+        {% endblock contenttitle %}
+    </title>
+
+
+    <link type ="text/css" rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link type ="text/css" rel="stylesheet" href="/assets/css/style.css">
+    <link type ="text/css" rel="stylesheet" href="/assets/css/a.css">
+    <style>
+        .white
+        {
+        background-color:white;
+        margin-top:150px;
+        }
+    </style>
+</head>
+<body class="lgn-bg">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img class="img-responsive" src="/assets/images/bbm32.png"></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{% url 'app2:home' %}">Home</a></li>
+              <li><a href="{% url 'app2:login' %}">Login</a></li>
+              <li><a href="{% url 'app2:register' %}">Registration</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+</nav>
+
+<div class="row">
+    <div class="col-sm-12">
+{% block content %}
+        {% endblock content %}
+    </div>
+</div>
+
+<div class="row nw1">
+    <h5> </h5>
+</div>
+
+</body>
+</html>

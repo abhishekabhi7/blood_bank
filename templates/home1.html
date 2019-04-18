@@ -1,0 +1,40 @@
+{% extends 'bbm.html' %}
+{% block content %}
+
+
+{% if donardata %}
+<div class = "row" >
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">
+<table border="5px" class="white">
+    <tr>
+        <td>Blood Code</td>
+        <td>Donar Name</td>
+        <td>Donar Email</td>
+        <td>Donar Conatct No.</td>
+        <td>Donar Age</td>
+        <td>Donar Image</td>
+        <td>Blood Type</td>
+    </tr>
+{% for i in donardata %}
+
+    <tr>
+<td>{{ i.bloodcode }}</td>
+<td>{{ i.donarname }}</td>
+<td>{{ i.donaremail }}</td>
+<td>{{ i.donarcontactno }}</td>
+<td>{{ i.donarage }}</td>
+
+
+        <td><img height="100px" width="100px" src="/media/{{ i.donarimage }}"/></td>
+<td>{{ i.bloodtype }}</td>
+</tr>
+
+    {% endfor %}
+</table>
+
+
+        {% endif %}
+        </div>
+</div>
+{% endblock content %}

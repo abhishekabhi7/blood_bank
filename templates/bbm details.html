@@ -1,0 +1,65 @@
+{% extends 'bbm.html' %}
+{% block content %}
+
+<section class="section">
+        <div class="container">
+            <div>
+            <ul class="form-container ff col-sm-3 nav nav-pils nav-stacked side-menu">
+                <li class="active">
+                    <a href="{% url 'app2:home' %}">Home</a>
+                </li>
+                <li> <a href="{% url 'app2:login' %}">Login</a></li>
+                <li> <a href="{% url 'app2:register' %}">Register</a></li>
+                <li> <a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+        <div class="col-sm-8 register-container form-container">
+            <form method="post" enctype="multipart/form-data" >
+                {% csrf_token %}
+                {% if invalid %}
+                <script>alert('Not a valid form');</script>
+                {% endif %}
+                {% if success %}
+                <script>alert('Data Stored Sucessfully');</script>
+                {% endif %}
+
+
+                <h3 class="text-center"> Enter Blood Details </h3>
+
+
+                <div class="form-group">
+                    <label>Blood ID</label>
+                    <input type="text" class="form-control" name="bloodid" id="bloodid">
+                </div>
+
+                <div class="form-group">
+                    <label>Blood Donar Name</label>
+                    <input type="text" class="form-control" name="blooddonarname" id="blooddonarname">
+                </div>
+                <div class="form-group">
+                    <label>Blood Type</label>
+                    <input type="text" class="form-control" name="bloodtype" id="bloodtype">
+                </div>
+                <div class="form-group">
+                    <label>Blood Cost</label>
+                    <input type="text" class="form-control" name="bloodcost" id="bloodcost">
+                </div>
+
+
+                <div class="form-group text-center">
+                    <input type="Submit" class="btn-btn primary">
+                </div>
+
+            </form>
+
+        </div></div></div>
+    </section>
+
+
+
+
+
+
+
+{% endblock content %}
